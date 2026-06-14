@@ -1,43 +1,58 @@
-/* --- CONFIGURAÇÕES GERAIS E PALETA DE CORES --- */
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
 :root {
-    --primary: #1b4332; /* Verde escuro (Força/Natureza) */
-    --secondary: #40916c; /* Verde vivo (Sustentabilidade) */
-    --accent: #d4a373; /* Dourado/Terra (Produção/Colheita) */
-    --light: #f4f9f4; /* Fundo claro */
-    --dark: #212529; /* Textos escuros */
+    --primary: #1b4332;
+    --secondary: #40916c;
+    --accent: #d4a373;
+    --light: #f4f9f4;
+    --dark: #212529;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--light);
+    font-family: "Segoe UI", sans-serif;
+    background: var(--light);
     color: var(--dark);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* --- CABEÇALHO E NAVEGAÇÃO --- */
+/* =========================
+   HEADER
+========================= */
+
 header {
-    background-color: var(--primary);
-    padding: 1rem 5%;
     position: fixed;
-    width: 100%;
     top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(27, 67, 50, 0.95);
+    backdrop-filter: blur(10px);
     z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    padding: 15px 8%;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
 }
 
 .logo {
     color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .logo span {
@@ -47,179 +62,263 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 30px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: var(--accent);
 }
 
-/* --- HERO SECTION --- */
+/* =========================
+   HERO
+========================= */
+
 .hero {
-    background: linear-gradient(rgba(27, 67, 50, 0.7), rgba(27, 67, 50, 0.8)), 
-    =url('https://abet-trabalho.org.br/como-a-agricultura-familiar-resiste-a-concentracao-de-terras-e-garante-alimento-na-mesa-dos-brasileiros/') no-repeat center center/cover;
-    height: 100vh;
+    min-height: 100vh;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     text-align: center;
+    padding: 120px 20px 60px;
+
+    background:
+        linear-gradient(
+            rgba(27, 67, 50, 0.75),
+            rgba(27, 67, 50, 0.75)
+        ),
+        url("https://www.ibrafe.org/img/artigo/2023/08/irriga%C3%A7%C3%A3o.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
     color: white;
-    padding: 0 1rem;
-    margin-top: 60px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    animation: fadeIn 1s ease-out;
+    font-size: 3.5rem;
+    max-width: 900px;
+    margin-bottom: 20px;
 }
 
 .hero p {
     font-size: 1.2rem;
-    max-width: 600px;
-    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-bottom: 35px;
 }
 
 .btn {
-    background-color: var(--accent);
+    display: inline-block;
+    background: var(--accent);
     color: var(--primary);
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s;
     text-decoration: none;
+    font-weight: bold;
+
+    padding: 15px 35px;
+    border-radius: 8px;
+
+    transition: 0.3s;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    background-color: #c59363;
+    transform: translateY(-3px);
+    background: #c69160;
 }
 
-/* --- SEÇÕES E CARDS --- */
+/* =========================
+   SEÇÕES
+========================= */
+
 .section {
-    padding: 5rem 10%;
-    text-align: center;
+    padding: 100px 8%;
 }
 
 .bg-alt {
-    background-color: #e9f1ec;
+    background: #e9f1ec;
 }
 
 .section h2 {
-    font-size: 2.5rem;
+    text-align: center;
     color: var(--primary);
-    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
     position: relative;
 }
 
 .section h2::after {
-    content: '';
-    display: block;
-    width: 50px;
+    content: "";
+    width: 80px;
     height: 4px;
-    background-color: var(--accent);
-    margin: 0.5rem auto 0;
+    background: var(--accent);
+
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 10px;
 }
+
+/* =========================
+   CARDS
+========================= */
 
 .grid-pilares {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 30px;
 }
 
 .card {
     background: white;
-    padding: 2.5rem 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    border-top: 4px solid var(--secondary);
+    padding: 35px 25px;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+    border-top: 5px solid var(--secondary);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 }
 
 .card h3 {
     color: var(--primary);
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
 }
 
-/* --- SIMULADOR --- */
+/* =========================
+   SIMULADOR
+========================= */
+
 .simulador-container {
-    background-color: var(--primary);
+    max-width: 750px;
+    margin: auto;
+
+    background: var(--primary);
     color: white;
-    border-radius: 12px;
-    padding: 3rem;
-    max-width: 700px;
-    margin: 0 auto;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+
+    padding: 40px;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .simulador-container h2 {
     color: white;
+    margin-bottom: 20px;
 }
 
 .control-group {
-    margin: 2rem 0;
+    margin-top: 35px;
     text-align: left;
 }
 
 .control-group label {
     display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .slider {
     width: 100%;
-    accent-color: var(--accent);
     cursor: pointer;
+    accent-color: var(--accent);
 }
 
 .resultado {
+    margin-top: 30px;
     background: rgba(255,255,255,0.1);
-    padding: 1.5rem;
-    border-radius: 6px;
-    margin-top: 2rem;
-    font-size: 1.1rem;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.resultado p {
+    margin: 10px 0;
 }
 
 .resultado span {
     color: var(--accent);
+    font-size: 1.5rem;
     font-weight: bold;
-    font-size: 1.4rem;
 }
 
-/* --- RODAPÉ --- */
+/* =========================
+   FOOTER
+========================= */
+
 footer {
-    background-color: #112a20;
-    color: rgba(255,255,255,0.7);
+    background: #112a20;
+    color: rgba(255,255,255,0.8);
+
     text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
+    padding: 25px;
 }
 
-/* --- ANIMAÇÕES --- */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 2.7rem;
+    }
 }
 
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
-    nav ul { display: none; }
-    .hero h1 { font-size: 2rem; }
-    .section { padding: 3rem 5%; }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 70px 5%;
+    }
+
+    .simulador-container {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
 }
