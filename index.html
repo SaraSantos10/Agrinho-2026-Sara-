@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroForte - Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Agro<span>Forte</span></div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#pilares">Pilares</a></li>
+                <li><a href="#simulador">Tecnologia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>O Futuro da Agricultura é Sustentável</h1>
+        <p>Unindo a força máxima da produção no campo com o respeito e preservação do meio ambiente. Tecnologia a serviço do planeta.</p>
+        <a href="#simulador" class="btn">Simule o Impacto</a>
+    </section>
+
+    <section id="pilares" class="section">
+        <h2>Equilíbrio em Ação</h2>
+        <div class="grid-pilares">
+            <div class="card">
+                <h3>🌾 Produção Alta</h3>
+                <p>Otimização de safras através de biotecnologia e manejo inteligente do solo, garantindo segurança alimentar sem expandir áreas desnecessárias.</p>
+            </div>
+            <div class="card">
+                <h3>💧 Preservação</h3>
+                <p>Uso de irrigação gota a gota, monitoramento de mananciais e manutenção rigorosa de áreas de preservação permanente (APPs).</p>
+            </div>
+            <div class="card">
+                <h3>🤖 Tecnologia Verde</h3>
+                <p>Drones, sensores IoT e Inteligência Artificial prevendo pragas e reduzindo a aplicação de insumos químicos ao mínimo necessário.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulador" class="section bg-alt">
+        <div class="simulador-container">
+            <h2>Calculadora de Eficiência Agro</h2>
+            <p>Ajuste a tecnologia aplicada e veja a projeção de economia de água e aumento de safra.</p>
+            
+            <div class="control-group">
+                <label for="tech-range">Nível de Tecnologia Aplicada: <span id="tech-val">50%</span></label>
+                <input type="range" id="tech-range" min="10" max="100" value="50" class="slider">
+            </div>
+
+            <div class="resultado">
+                <p>Economia estimada de água: <span id="agua-val">30%</span></p>
+                <p>Aumento potencial de produção: <span id="prod-val">18%</span></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AgroForte Sustentável. Cultivando o amanhã, protegendo o hoje.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
